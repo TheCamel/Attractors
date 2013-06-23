@@ -27,17 +27,17 @@ Attractors::Attractors(QWidget *parent)
     pdjd = settings->value("PdJ/d", -2.1).toDouble();
 
 
-    cliffa = settings->value("Cliff/a", 1.4).toDouble();
-    cliffb = settings->value("Cliff/b", -2.3).toDouble();
-    cliffc = settings->value("Cliff/c", 2.4).toDouble();
-    cliffd = settings->value("Cliff/d", -2.1).toDouble();
+    cliffa = settings->value("Cliff/a", 2).toDouble();
+    cliffb = settings->value("Cliff/b", -2).toDouble();
+    cliffc = settings->value("Cliff/c", 2).toDouble();
+    cliffd = settings->value("Cliff/d", -1.5).toDouble();
 
     color = settings->value("color", QColor(0,0,0,2)).value<QColor>();
 
-    mx = settings->value("x/m", 125).toInt();
+    mx = settings->value("x/m", 100).toInt();
     dx = settings->value("x/d", 600).toInt();
 
-    my = settings->value("y/m", 125).toInt();
+    my = settings->value("y/m", 100).toInt();
     dy = settings->value("y/d", 600).toInt();
 
     actionPlay = new QAction("&Marche", this);
