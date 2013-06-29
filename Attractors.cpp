@@ -15,7 +15,7 @@ Attractors::Attractors(QWidget *parent)
     timer = new QTimer;
     connect(timer, SIGNAL(timeout()), this, SLOT(paint()));
 
-    setWindowTitle("Attractors");
+    setWindowTitle(tr("Attractors"));
 
     settings = new QSettings;
 
@@ -40,16 +40,16 @@ Attractors::Attractors(QWidget *parent)
     my = settings->value("y/m", 100).toInt();
     dy = settings->value("y/d", 600).toInt();
 
-    actionPlay = new QAction("&Play", this);
-    actionPause = new QAction("Pause", this);
-    QAction* actionRestart = new QAction("&Reset", this);
+    actionPlay = new QAction(tr("&Play"), this);
+    actionPause = new QAction(tr("Pause"), this);
+    QAction* actionRestart = new QAction(tr("&Reset"), this);
 
-    QAction* actionParams = new QAction("&Settings", this);
-    QAction* actionSave = new QAction("&Save", this);
+    QAction* actionParams = new QAction(tr("&Settings"), this);
+    QAction* actionSave = new QAction(tr("&Save"), this);
 
-    QAction* actionQuit = new QAction("&Quit", this);
+    QAction* actionQuit = new QAction(tr("&Quit"), this);
 
-    QToolBar *toolbar = addToolBar("Actions");
+    QToolBar *toolbar = addToolBar(tr("Actions"));
     toolbar->setMovable(false);
 
     actionPlay->setIcon(QIcon::fromTheme("media-playback-start", QIcon(qApp->applicationDirPath() + "/play.png")));
@@ -91,7 +91,7 @@ Attractors::Attractors(QWidget *parent)
     layout = new QGridLayout*[2];
     window->setModal(true);
     window->setLayout(mainLayout);
-    window->setWindowTitle("Settings");
+    window->setWindowTitle(tr("Settings"));
 
     attractor = new QComboBox;
     QStringList names;
@@ -230,8 +230,8 @@ Attractors::Attractors(QWidget *parent)
     mainLayout->addWidget(paramWidget, 1, 0, Qt::AlignCenter);
 
     QHBoxLayout* layoutButtons = new QHBoxLayout;
-    ok = new QPushButton("&Ok");
-    cancel = new QPushButton("&Cancel");
+    ok = new QPushButton(tr("&Ok"));
+    cancel = new QPushButton(tr("&Cancel"));
 
     layoutButtons->addWidget(ok);
     layoutButtons->addWidget(cancel);
@@ -239,9 +239,9 @@ Attractors::Attractors(QWidget *parent)
     QHBoxLayout* layoutColor = new QHBoxLayout;
     widColor = new QLabel;
     layoutColor->addWidget(widColor);
-    QLabel* textColor = new QLabel("Color");
+    QLabel* textColor = new QLabel(tr("Color"));
     textColor->setFont(text);
-    QPushButton* buttonColor = new QPushButton("Change");
+    QPushButton* buttonColor = new QPushButton(tr("Change"));
     layoutColor->addWidget(buttonColor);
 
     smx = new QSpinBox;
@@ -263,13 +263,13 @@ Attractors::Attractors(QWidget *parent)
     smy->setValue(my);
     sdy->setValue(dy);
 
-    QLabel* dimensions = new QLabel("Dimensions");
+    QLabel* dimensions = new QLabel(tr("Dimensions"));
     dimensions->setFont(text);
 
-    QLabel* lx = new QLabel("x-zoom :");
-    QLabel* ly = new QLabel("y-zoom :");
-    QLabel* largeur = new QLabel("Width :");
-    QLabel* hauteur = new QLabel("Heigth :");
+    QLabel* lx = new QLabel(tr("x-zoom:"));
+    QLabel* ly = new QLabel(tr("y-zoom:"));
+    QLabel* largeur = new QLabel(tr("Width:"));
+    QLabel* hauteur = new QLabel(tr("Heigth:"));
     QGridLayout* layoutDimensions = new QGridLayout;
 
     layoutDimensions->addWidget(largeur, 0, 0);
