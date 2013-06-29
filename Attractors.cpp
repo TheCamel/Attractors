@@ -40,14 +40,14 @@ Attractors::Attractors(QWidget *parent)
     my = settings->value("y/m", 100).toInt();
     dy = settings->value("y/d", 600).toInt();
 
-    actionPlay = new QAction("&Marche", this);
-    actionPause = new QAction("&Pause", this);
-    QAction* actionRestart = new QAction("Tout &effacer", this);
+    actionPlay = new QAction("&Play", this);
+    actionPause = new QAction("Pause", this);
+    QAction* actionRestart = new QAction("&Reset", this);
 
-    QAction* actionParams = new QAction("&Paramètres", this);
-    QAction* actionSave = new QAction("&Sauvegarder", this);
+    QAction* actionParams = new QAction("&Settings", this);
+    QAction* actionSave = new QAction("&Save", this);
 
-    QAction* actionQuit = new QAction("&Quitter", this);
+    QAction* actionQuit = new QAction("&Quit", this);
 
     QToolBar *toolbar = addToolBar("Actions");
     toolbar->setMovable(false);
@@ -91,7 +91,7 @@ Attractors::Attractors(QWidget *parent)
     layout = new QGridLayout*[2];
     window->setModal(true);
     window->setLayout(mainLayout);
-    window->setWindowTitle("Paramètres");
+    window->setWindowTitle("Settings");
 
     attractor = new QComboBox;
     QStringList names;
@@ -231,7 +231,7 @@ Attractors::Attractors(QWidget *parent)
 
     QHBoxLayout* layoutButtons = new QHBoxLayout;
     ok = new QPushButton("&Ok");
-    cancel = new QPushButton("&Annuler");
+    cancel = new QPushButton("&Cancel");
 
     layoutButtons->addWidget(ok);
     layoutButtons->addWidget(cancel);
@@ -239,9 +239,9 @@ Attractors::Attractors(QWidget *parent)
     QHBoxLayout* layoutColor = new QHBoxLayout;
     widColor = new QLabel;
     layoutColor->addWidget(widColor);
-    QLabel* textColor = new QLabel("Couleur");
+    QLabel* textColor = new QLabel("Color");
     textColor->setFont(text);
-    QPushButton* buttonColor = new QPushButton("Changer");
+    QPushButton* buttonColor = new QPushButton("Change");
     layoutColor->addWidget(buttonColor);
 
     smx = new QSpinBox;
@@ -266,10 +266,10 @@ Attractors::Attractors(QWidget *parent)
     QLabel* dimensions = new QLabel("Dimensions");
     dimensions->setFont(text);
 
-    QLabel* lx = new QLabel("Zoom en x :");
-    QLabel* ly = new QLabel("Zoom en y :");
-    QLabel* largeur = new QLabel("Largeur :");
-    QLabel* hauteur = new QLabel("Hauteur :");
+    QLabel* lx = new QLabel("x-zoom :");
+    QLabel* ly = new QLabel("y-zoom :");
+    QLabel* largeur = new QLabel("Width :");
+    QLabel* hauteur = new QLabel("Heigth :");
     QGridLayout* layoutDimensions = new QGridLayout;
 
     layoutDimensions->addWidget(largeur, 0, 0);
