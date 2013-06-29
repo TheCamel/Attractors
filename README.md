@@ -1,4 +1,4 @@
-Program allowing to draw Peter de Jong and Clifford attractors.
+Program to draw Peter de Jong and Clifford attractors.
 
 Copyright (C) 2013  Benoît Vernier <vernier.benoit@gmail.com>
 
